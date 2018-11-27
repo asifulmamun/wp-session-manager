@@ -17,9 +17,18 @@ function wpdocs_check_logged_in() {
         session_destroy();
     } else {
         session_start(); // Start Session
-        $_SESSION['wp_get_current_user'] = $current_user; // get user Id
 
-        $_SESSION['home'] =  esc_url( home_url( '/' ) );
+        /*
+			Here is variable with session declare and and value get from wp and passing data with session to feb-mms global plugin.
+        */
+        $_SESSION['feb_wp_get_current_user'] = $current_user; // user Id
+        $_SESSION['feb_home'] =  esc_url( home_url( '/' ) ); // Home URL
+        $_SESSION['power'] =$user_meta->roles; // User Role
+		
+
+
+
+
     }
 }
 add_action( 'init', 'wpdocs_check_logged_in' );
