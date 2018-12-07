@@ -36,7 +36,7 @@ function wp_check_logged_in() {
 		global $wpdb; // table Prefix Helper
 		$_SESSION['feb_db_table_prefix'] = $wpdb->prefix; // Tabel Prefix
 		
-        $_SESSION['feb_wp_get_current_user_id'] = $current_user; // user Id
+        $_SESSION['feb_wp_get_current_user_id'] = $current_user->ID; // user Id
         
         $_SESSION['feb_main_web_home'] =  esc_url( home_url( '/' ) ); // Home URL Main Web Site
         
