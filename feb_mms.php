@@ -8,6 +8,11 @@ Author: Al Mamun - (asifulmamun)
 Author URI: https://facebook.com/asifulmamun
 */
 
+/*
+ * -----------------------------
+ *		Start Here for session or without session information
+ * -----------------------------
+*/
 function wp_check_logged_in() {
     $current_user = wp_get_current_user();
     if ( 0 == $current_user->ID ) {
@@ -48,5 +53,23 @@ function wp_check_logged_in() {
     } // else
 } //function
 add_action( 'init', 'wp_check_logged_in' );
+
+
+/*
+ * -----------------------------
+ *		After Login Redirect in other page
+ * -----------------------------
+*/
+function login_redirect( $redirect_to, $request, $user ){
+    return home_url('/feb-mms/');
+}
+add_filter( 'login_redirect', 'login_redirect', 10, 3 );
+
+
+
+
+
+
+
 
  ?>
