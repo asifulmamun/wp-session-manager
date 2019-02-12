@@ -60,10 +60,10 @@ add_action( 'init', 'wp_check_logged_in' );
  *		After Login Redirect in other page
  * -----------------------------
 */
-// function login_redirect( $redirect_to, $request, $user ){
-//     return home_url('/feb-mms/');
-// }
-// add_filter( 'login_redirect', 'login_redirect', 10, 3 );
+function login_redirect( $redirect_to, $request, $user ){
+    return home_url('/log-success');
+}
+add_filter( 'login_redirect', 'login_redirect', 10, 3 );
 
 
 
