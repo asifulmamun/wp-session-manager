@@ -57,7 +57,7 @@ add_action( 'init', 'wp_check_logged_in' );
 
 /*
  * -----------------------------
- *		After Login Redirect in other page
+ *		After Login Redirect to other page
  * -----------------------------
 */
 function login_redirect( $redirect_to, $request, $user ){
